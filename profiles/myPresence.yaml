@@ -1,0 +1,78 @@
+# hello-world-profile
+name: my-presence
+components:
+- id: main
+  capabilities:
+  - id: presenceSensor
+    version: 1
+  categories:
+  - name: PresenceSensor
+- id: main2
+  capabilities:
+  - id: presenceSensor
+    version: 1
+  categories:
+  - name: PresenceSensor
+preferences:
+  - title: "Mac Address #1"
+    name: macAddress1
+    description: "The mac address of device #1"
+    required: true
+    preferenceType: string
+    definition:
+      minLength: 17
+      maxLength: 17
+      default: "D2:82:88:11:3F:AB"
+      stringType: text
+  - title: "Name #1"
+    name: name1
+    description: "The name of device #1"
+    required: true
+    preferenceType: string
+    definition:
+      default: "Dan"
+      stringType: text
+  - title: "Mac Address #2"
+    name: macAddress2
+    description: "The mac address of device #2"
+    required: true
+    preferenceType: string
+    definition:
+      minLength: 17
+      maxLength: 17
+      default: "E2:B8:E0:C6:9E:3E"
+      stringType: text
+  - title: "Name #2"
+    name: name2
+    description: "The name of device #2"
+    required: true
+    preferenceType: string
+    definition:
+      default: "Leticia"
+      stringType: text      
+  - title: "Refresh interval in seconds"
+    name: refreshInterval
+    description: Query the presence service every these many seconds
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 600
+      default: 30
+  - title: "Presence service URL"
+    name: presenceServiceUrl
+    description: The URL for the presence service
+    required: true
+    preferenceType: string
+    definition:
+      default: "https://192.168.1.2:8020/presences"
+      stringType: text
+  - title: "HTTP Timeout"
+    name: httpTimeout
+    description: The HTTP Timeout
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 60
+      default: 2
